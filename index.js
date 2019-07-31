@@ -5,10 +5,11 @@ let country,str='';
 
 	let input = document.getElementById('searchbar').value 
 	input=input.toLowerCase(); 
-	let x = document.getElementsByClassName('animals'); 
+	<!-- fetching the information of countries from this API -->
 	fetch('https://restcountries.eu/rest/v2/name/'+input)
         .then(response => response.json())
         .then(data => {
+		<!-- processing the input -->
 	        document.getElementById("row").innerHTML='';
 	        country='';
             country=data;
@@ -38,7 +39,7 @@ let country,str='';
 		}); 
 
 	})
+	<!-- handling errors -->
 	.catch(error => console.error(error))
  
 } 
-document.getElementById('lblName').innerHTML = 'Hi, I am Arun Banik';
